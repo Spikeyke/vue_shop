@@ -1,7 +1,7 @@
 // 这是项目发布阶段需要用到的babel插件
-const prodPlugins = []
+const prodPlugin = []
 if (process.env.NODE_ENV === 'production') {
-  prodPlugins.push('transform-remove-console')
+  prodPlugin.push('transform-remove-console')
 }
 
 module.exports = {
@@ -16,8 +16,7 @@ module.exports = {
         styleLibraryName: 'theme-chalk'
       }
     ],
-    // 发布产品时候的插件数组
-    ...prodPlugins,
+    'transform-remove-console',
     '@babel/plugin-syntax-dynamic-import'
   ]
 }
